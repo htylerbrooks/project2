@@ -2,7 +2,9 @@
 
 
 
-TESTING 456; BRANCH STUFF(4/20/15)!
+<<<<<<< HEAD
+TESTING 10,11,12; Setting an upstream branch!(4/20/15)!
+
 
 
 This README would normally document whatever steps are necessary to get the
