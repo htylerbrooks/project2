@@ -1,6 +1,6 @@
 == README
 
-TESTING 10,11,12; Setting an upstream branch!(4/20/15)!(Tyler was here!)
+TESTING 10,11,12; Setting an upstream branch!(4/20/15)!(Tyler and brad were here!)
 
 
 
