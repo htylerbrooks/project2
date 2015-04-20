@@ -1,0 +1,17 @@
+
+<div class="container">
+
+  <li><%=link_to "Back", posts_path%></li>
+
+  <li><%=@post.title%></li>
+  <h1><%=link_to"Edit", edit_post_path(@post)%></h1>
+  <h1><%= link_to "Delete Question", post_path(@post), method: :delete, data: { confirm: "Are you sure"}%></h1>
+
+
+  <li>by <%=@post.author%></li>
+  <li><%=@post.description_title%></li>
+  <li><%=@post.description_text%></li>
+  <li><%=@post.description_code%></li>
+
+
+</div><!-- end of container  -->

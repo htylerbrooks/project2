@@ -1,0 +1,30 @@
+
+
+
+<%= form_for @post do |q| %>
+
+<% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@post.errors.count, "error") %>
+      </h2>
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p><%=@post.description_title%></p>
+  <%= q.text_field :title %>
+  <%= q.text_field :author %>
+  <%= q.text_field :description_title %>
+  <%= q.text_field :description_text %>
+  <%= q.text_field :description_code %>
+
+
+
+  <%= q.submit %>
+
+<% end %>
