@@ -11641,3 +11641,504 @@ Processing by CitiesController#index as HTML
   [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
   Rendered cities/index.html.erb within layouts/application (1.2ms)
 Completed 200 OK in 93ms (Views: 92.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities" for ::1 at 2015-04-21 19:18:01 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.7ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered cities/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 338ms (Views: 320.0ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 19:18:05 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered cities/_form.html.erb (27.7ms)
+  Rendered cities/show.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 147ms (Views: 92.9ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/users" for ::1 at 2015-04-21 19:18:09 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jYYssq4FrljH+NyiCGc3tfyFtsA0NUqIYItcXLXDeoYRoQLJ8ZRP3h6DbzVsRAheP1IdgzQl+0c+L2J+65qqEA==", "user"=>{"name"=>"", "age"=>"", "gender"=>"", "interest_one"=>"", "interest_two"=>""}, "city_id"=>"1", "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "gender", "interest_one", "interest_two", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", ""], ["gender", ""], ["interest_one", ""], ["interest_two", ""], ["created_at", "2015-04-21 23:18:09.757186"], ["updated_at", "2015-04-21 23:18:09.757186"]]
+  [1m[35m (68.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/cities/1/homeless_people
+Completed 302 Found in 72ms (ActiveRecord: 69.0ms)
+
+
+Started GET "/cities/1/homeless_people" for ::1 at 2015-04-21 19:18:09 -0400
+Processing by HomelessPeopleController#index as HTML
+  Parameters: {"city_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mCity Load (0.3ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHomelessPerson Load (0.6ms)[0m  [1mSELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1[0m  [["city_id", 1]]
+  Rendered homeless_people/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 85ms (Views: 72.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/cities/1/homeless_people" for ::1 at 2015-04-21 19:18:11 -0400
+Processing by HomelessPeopleController#index as HTML
+  Parameters: {"city_id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mHomelessPerson Load (0.2ms)[0m  SELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1  [["city_id", 1]]
+  Rendered homeless_people/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 91ms (Views: 88.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap-theme.min.self-fee8ad547a5946f07de3f878f9f10e5e10d0d241649f1778c92e21fee13e7e3c.css?body=1" for ::1 at 2015-04-21 19:18:11 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap-theme.self-fa9e5cf6a4a9fe244ce9f7d34b03f9cff6c02783790cf62135d654587a086dd7.css?body=1" for ::1 at 2015-04-21 19:18:11 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap.self-46d5751ac0b7f114cb4294988143af531aa069b7a249f3928840faa1600e9cf3.css?body=1" for ::1 at 2015-04-21 19:18:11 -0400
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 19:18:11 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap.min.self-a2136f50814e64f3dc4cd000975604947d7f3d0a16f1d66295e17c1040ace54f.css?body=1" for ::1 at 2015-04-21 19:18:11 -0400
+
+
+Started GET "/assets/homeless_people.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 19:18:11 -0400
+
+
+Started GET "/assets/normalize.self-04f59fec8725783a0d08327c9c38d82f8f364c62606134256e17a3ba3f1a29f0.css?body=1" for ::1 at 2015-04-21 19:18:11 -0400
+
+
+Started GET "/assets/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 19:18:11 -0400
+
+
+Started GET "/assets/application.self-61c186916392ef60c95e353840a7c21db7997114efe3729096c039155b24013d.css?body=1" for ::1 at 2015-04-21 19:18:11 -0400
+
+
+Started GET "/assets/font-awesome.self-2d17540bab3759939e910ca38a695f014e0c777ded3ad7a01c4658b9d3fc980d.css?body=1" for ::1 at 2015-04-21 19:18:11 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-21 19:18:11 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-21 19:18:11 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-21 19:18:11 -0400
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 19:18:11 -0400
+
+
+Started GET "/assets/homeless_people.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 19:18:11 -0400
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 19:18:11 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-21 19:18:11 -0400
+
+
+Started GET "/cities" for ::1 at 2015-04-21 19:18:12 -0400
+Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered cities/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 72ms (Views: 71.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 19:18:14 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered cities/_form.html.erb (0.9ms)
+  Rendered cities/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 83ms (Views: 81.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for ::1 at 2015-04-21 19:18:16 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6XKfNPs7O44urfTM0Nr+SwTAFn+iq2EQSLSuwsA1XH11VbFPpKraCPfWR1u0+cGgxxe9PKK70N8WEJDgnmyM6w==", "user"=>{"name"=>"brad", "age"=>"", "gender"=>"", "interest_one"=>"", "interest_two"=>""}, "city_id"=>"1", "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "gender", "interest_one", "interest_two", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "brad"], ["gender", ""], ["interest_one", ""], ["interest_two", ""], ["created_at", "2015-04-21 23:18:16.685695"], ["updated_at", "2015-04-21 23:18:16.685695"]]
+  [1m[36m (5.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/cities/1/homeless_people
+Completed 302 Found in 9ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/cities/1/homeless_people" for ::1 at 2015-04-21 19:18:16 -0400
+Processing by HomelessPeopleController#index as HTML
+  Parameters: {"city_id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mHomelessPerson Load (0.2ms)[0m  SELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1  [["city_id", 1]]
+  Rendered homeless_people/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 77ms (Views: 74.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cities/1/homeless_people" for ::1 at 2015-04-21 19:18:18 -0400
+Processing by HomelessPeopleController#index as HTML
+  Parameters: {"city_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHomelessPerson Load (0.2ms)[0m  [1mSELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1[0m  [["city_id", 1]]
+  Rendered homeless_people/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 79ms (Views: 75.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap.self-46d5751ac0b7f114cb4294988143af531aa069b7a249f3928840faa1600e9cf3.css?body=1" for ::1 at 2015-04-21 19:18:18 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap.min.self-a2136f50814e64f3dc4cd000975604947d7f3d0a16f1d66295e17c1040ace54f.css?body=1" for ::1 at 2015-04-21 19:18:18 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap-theme.min.self-fee8ad547a5946f07de3f878f9f10e5e10d0d241649f1778c92e21fee13e7e3c.css?body=1" for ::1 at 2015-04-21 19:18:18 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap-theme.self-fa9e5cf6a4a9fe244ce9f7d34b03f9cff6c02783790cf62135d654587a086dd7.css?body=1" for ::1 at 2015-04-21 19:18:18 -0400
+
+
+Started GET "/assets/homeless_people.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 19:18:18 -0400
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 19:18:18 -0400
+
+
+Started GET "/assets/normalize.self-04f59fec8725783a0d08327c9c38d82f8f364c62606134256e17a3ba3f1a29f0.css?body=1" for ::1 at 2015-04-21 19:18:18 -0400
+
+
+Started GET "/assets/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 19:18:18 -0400
+
+
+Started GET "/assets/application.self-61c186916392ef60c95e353840a7c21db7997114efe3729096c039155b24013d.css?body=1" for ::1 at 2015-04-21 19:18:18 -0400
+
+
+Started GET "/assets/font-awesome.self-2d17540bab3759939e910ca38a695f014e0c777ded3ad7a01c4658b9d3fc980d.css?body=1" for ::1 at 2015-04-21 19:18:18 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-21 19:18:18 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-21 19:18:18 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-21 19:18:18 -0400
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 19:18:18 -0400
+
+
+Started GET "/assets/homeless_people.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 19:18:18 -0400
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 19:18:18 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-21 19:18:18 -0400
+
+
+Started GET "/cities/1/homeless_people" for ::1 at 2015-04-21 19:18:20 -0400
+Processing by HomelessPeopleController#index as HTML
+  Parameters: {"city_id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mHomelessPerson Load (0.2ms)[0m  SELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1  [["city_id", 1]]
+  Rendered homeless_people/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 75ms (Views: 71.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap-theme.self-fa9e5cf6a4a9fe244ce9f7d34b03f9cff6c02783790cf62135d654587a086dd7.css?body=1" for ::1 at 2015-04-21 19:18:20 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap-theme.min.self-fee8ad547a5946f07de3f878f9f10e5e10d0d241649f1778c92e21fee13e7e3c.css?body=1" for ::1 at 2015-04-21 19:18:20 -0400
+
+
+Started GET "/assets/homeless_people.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 19:18:20 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap.min.self-a2136f50814e64f3dc4cd000975604947d7f3d0a16f1d66295e17c1040ace54f.css?body=1" for ::1 at 2015-04-21 19:18:20 -0400
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 19:18:20 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap.self-46d5751ac0b7f114cb4294988143af531aa069b7a249f3928840faa1600e9cf3.css?body=1" for ::1 at 2015-04-21 19:18:20 -0400
+
+
+Started GET "/assets/normalize.self-04f59fec8725783a0d08327c9c38d82f8f364c62606134256e17a3ba3f1a29f0.css?body=1" for ::1 at 2015-04-21 19:18:20 -0400
+
+
+Started GET "/assets/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 19:18:20 -0400
+
+
+Started GET "/assets/application.self-61c186916392ef60c95e353840a7c21db7997114efe3729096c039155b24013d.css?body=1" for ::1 at 2015-04-21 19:18:20 -0400
+
+
+Started GET "/assets/font-awesome.self-2d17540bab3759939e910ca38a695f014e0c777ded3ad7a01c4658b9d3fc980d.css?body=1" for ::1 at 2015-04-21 19:18:20 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-21 19:18:20 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-21 19:18:20 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-21 19:18:20 -0400
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 19:18:20 -0400
+
+
+Started GET "/assets/homeless_people.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 19:18:20 -0400
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 19:18:20 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-21 19:18:20 -0400
+
+
+Started GET "/cities/1/homeless_people" for ::1 at 2015-04-21 19:18:23 -0400
+Processing by HomelessPeopleController#index as HTML
+  Parameters: {"city_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHomelessPerson Load (0.2ms)[0m  [1mSELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1[0m  [["city_id", 1]]
+  Rendered homeless_people/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 79ms (Views: 75.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap-theme.self-fa9e5cf6a4a9fe244ce9f7d34b03f9cff6c02783790cf62135d654587a086dd7.css?body=1" for ::1 at 2015-04-21 19:18:23 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap.self-46d5751ac0b7f114cb4294988143af531aa069b7a249f3928840faa1600e9cf3.css?body=1" for ::1 at 2015-04-21 19:18:23 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap.min.self-a2136f50814e64f3dc4cd000975604947d7f3d0a16f1d66295e17c1040ace54f.css?body=1" for ::1 at 2015-04-21 19:18:23 -0400
+
+
+Started GET "/assets/homeless_people.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 19:18:23 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap-theme.min.self-fee8ad547a5946f07de3f878f9f10e5e10d0d241649f1778c92e21fee13e7e3c.css?body=1" for ::1 at 2015-04-21 19:18:23 -0400
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 19:18:23 -0400
+
+
+Started GET "/assets/normalize.self-04f59fec8725783a0d08327c9c38d82f8f364c62606134256e17a3ba3f1a29f0.css?body=1" for ::1 at 2015-04-21 19:18:23 -0400
+
+
+Started GET "/assets/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 19:18:23 -0400
+
+
+Started GET "/assets/application.self-61c186916392ef60c95e353840a7c21db7997114efe3729096c039155b24013d.css?body=1" for ::1 at 2015-04-21 19:18:23 -0400
+
+
+Started GET "/assets/font-awesome.self-2d17540bab3759939e910ca38a695f014e0c777ded3ad7a01c4658b9d3fc980d.css?body=1" for ::1 at 2015-04-21 19:18:23 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-21 19:18:23 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-21 19:18:23 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-21 19:18:23 -0400
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 19:18:23 -0400
+
+
+Started GET "/assets/homeless_people.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 19:18:23 -0400
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 19:18:23 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-21 19:18:23 -0400
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 19:18:27 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered cities/_form.html.erb (1.5ms)
+  Rendered cities/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 75ms (Views: 73.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap-theme.self-fa9e5cf6a4a9fe244ce9f7d34b03f9cff6c02783790cf62135d654587a086dd7.css?body=1" for ::1 at 2015-04-21 19:18:27 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap.self-46d5751ac0b7f114cb4294988143af531aa069b7a249f3928840faa1600e9cf3.css?body=1" for ::1 at 2015-04-21 19:18:27 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap-theme.min.self-fee8ad547a5946f07de3f878f9f10e5e10d0d241649f1778c92e21fee13e7e3c.css?body=1" for ::1 at 2015-04-21 19:18:27 -0400
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 19:18:27 -0400
+
+
+Started GET "/assets/homeless_people.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 19:18:27 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap.min.self-a2136f50814e64f3dc4cd000975604947d7f3d0a16f1d66295e17c1040ace54f.css?body=1" for ::1 at 2015-04-21 19:18:27 -0400
+
+
+Started GET "/assets/normalize.self-04f59fec8725783a0d08327c9c38d82f8f364c62606134256e17a3ba3f1a29f0.css?body=1" for ::1 at 2015-04-21 19:18:27 -0400
+
+
+Started GET "/assets/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 19:18:27 -0400
+
+
+Started GET "/assets/application.self-61c186916392ef60c95e353840a7c21db7997114efe3729096c039155b24013d.css?body=1" for ::1 at 2015-04-21 19:18:27 -0400
+
+
+Started GET "/assets/font-awesome.self-2d17540bab3759939e910ca38a695f014e0c777ded3ad7a01c4658b9d3fc980d.css?body=1" for ::1 at 2015-04-21 19:18:27 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-21 19:18:27 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-21 19:18:27 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-21 19:18:27 -0400
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 19:18:27 -0400
+
+
+Started GET "/assets/homeless_people.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 19:18:27 -0400
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 19:18:27 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-21 19:18:27 -0400
+
+
+Started POST "/users" for ::1 at 2015-04-21 19:18:31 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+2EPOREe3PRVTe6Izis/f8Xkm0rsLpIz1ewLeWBo9FhnRiFCTo89cow2XR+qCACUBjMwCew+I/yLSDVbPjEkzg==", "user"=>{"name"=>"brad", "age"=>"", "gender"=>"", "interest_one"=>"", "interest_two"=>""}, "city_id"=>"1", "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "gender", "interest_one", "interest_two", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "brad"], ["gender", ""], ["interest_one", ""], ["interest_two", ""], ["created_at", "2015-04-21 23:18:31.484539"], ["updated_at", "2015-04-21 23:18:31.484539"]]
+  [1m[36m (5.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/cities/1/homeless_people
+Completed 302 Found in 8ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/cities/1/homeless_people" for ::1 at 2015-04-21 19:18:31 -0400
+Processing by HomelessPeopleController#index as HTML
+  Parameters: {"city_id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mHomelessPerson Load (0.1ms)[0m  SELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1  [["city_id", 1]]
+  Rendered homeless_people/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 86ms (Views: 83.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cities/1/homeless_people" for ::1 at 2015-04-21 19:18:39 -0400
+Processing by HomelessPeopleController#index as HTML
+  Parameters: {"city_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHomelessPerson Load (0.1ms)[0m  [1mSELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1[0m  [["city_id", 1]]
+  Rendered homeless_people/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 87ms (Views: 84.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap-theme.self-fa9e5cf6a4a9fe244ce9f7d34b03f9cff6c02783790cf62135d654587a086dd7.css?body=1" for ::1 at 2015-04-21 19:18:39 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap-theme.min.self-fee8ad547a5946f07de3f878f9f10e5e10d0d241649f1778c92e21fee13e7e3c.css?body=1" for ::1 at 2015-04-21 19:18:39 -0400
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 19:18:39 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap.self-46d5751ac0b7f114cb4294988143af531aa069b7a249f3928840faa1600e9cf3.css?body=1" for ::1 at 2015-04-21 19:18:39 -0400
+
+
+Started GET "/assets/homeless_people.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 19:18:39 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap.min.self-a2136f50814e64f3dc4cd000975604947d7f3d0a16f1d66295e17c1040ace54f.css?body=1" for ::1 at 2015-04-21 19:18:39 -0400
+
+
+Started GET "/assets/normalize.self-04f59fec8725783a0d08327c9c38d82f8f364c62606134256e17a3ba3f1a29f0.css?body=1" for ::1 at 2015-04-21 19:18:39 -0400
+
+
+Started GET "/assets/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 19:18:39 -0400
+
+
+Started GET "/assets/application.self-61c186916392ef60c95e353840a7c21db7997114efe3729096c039155b24013d.css?body=1" for ::1 at 2015-04-21 19:18:39 -0400
+
+
+Started GET "/assets/font-awesome.self-2d17540bab3759939e910ca38a695f014e0c777ded3ad7a01c4658b9d3fc980d.css?body=1" for ::1 at 2015-04-21 19:18:39 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-21 19:18:39 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-21 19:18:39 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-21 19:18:39 -0400
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 19:18:39 -0400
+
+
+Started GET "/assets/homeless_people.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 19:18:39 -0400
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 19:18:39 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-21 19:18:39 -0400
+
+
+Started GET "/cities" for ::1 at 2015-04-21 19:18:43 -0400
+Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.4ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered cities/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 70ms (Views: 69.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 19:18:44 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered cities/_form.html.erb (0.9ms)
+  Rendered cities/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 81ms (Views: 79.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/cities/2" for ::1 at 2015-04-21 19:18:46 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered cities/_form.html.erb (0.9ms)
+  Rendered cities/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 78ms (Views: 76.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 19:18:48 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered cities/_form.html.erb (0.9ms)
+  Rendered cities/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 80ms (Views: 78.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/cities/2" for ::1 at 2015-04-21 19:18:50 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered cities/_form.html.erb (0.9ms)
+  Rendered cities/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 80ms (Views: 78.4ms | ActiveRecord: 0.1ms)
