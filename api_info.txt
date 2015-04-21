@@ -1,0 +1,91 @@
+The Yelp API
+
+1. Add the yelp gem to the gemfile: gem 'yelp'
+2. Run "bundle install" in the terminal
+3. Register and get API keys from the developer site:
+
+    API v2.0
+    Consumer Key	AjJ28Eu5BSGnP93DiQ7tiQ
+    Consumer Secret	j0Nct936KzjIKdGnviJJI9FTUEQ
+    Token	3gH_HYZ1LzJZsf3ILopGL2B3SRfhqwYD
+    Token Secret	3uXzqGSfEmCxbzs9tYpDaCQqeU0
+
+    API v1.0 (deprecated)
+    YWSID
+    Key	fXJ7tUSfEz6Kybrm8pg8Fw
+
+4. Place an initializer that sets up the keys for the gem: config/intializers/yelp.rb
+
+    Yelp.client.configure do |config|
+      config.consumer_key = AjJ28Eu5BSGnP93DiQ7tiQ
+      config.consumer_secret = j0Nct936KzjIKdGnviJJI9FTUEQ
+      config.token = 3gH_HYZ1LzJZsf3ILopGL2B3SRfhqwYD
+      config.token_secret = 3uXzqGSfEmCxbzs9tYpDaCQqeU0
+    end
+
+5. Now we can use a pre-intialized client anywhere in our app:
+
+    # inside of CitiesController
+    # app/controllers/cities_controller.rb
+
+    class CitiesController < ApplicationController
+      # ...
+
+      def search
+        @city = City.find(params[:id])
+        parameters = { term: 'soup kitchen', limit: 3 }
+        render json: Yelp.client.search(@city.name, parameters)
+      end
+    end
+
+The NPR API
+
+Key: MDE4OTI2ODUxMDE0Mjk2MzEyNTg2ZmQ1MQ001
+
+1. Add gem 'httparty' to the Gemfile.
+2. Run bundle install.
+3. In the city controller:
+
+  def show
+    @articles = []
+    response = HTTParty.get('http://api.usatoday.com/articles/syndication/usatoday/assets?TagNames=homeless&api_key=7x69g886kzq8vvhhxnpv75an')
+    @articles = response["data"]
+  end
+
+
+Past project examples of API usage for reference:
+
+1. Using two different API's(omdb and giphy) to seed the database - more complicated. Have to install gem 'httparty'.
+
+movie_titles = ["good will hunting", "spartacus", "jerry maguire"]
+movie_titles.each do |movie_title|
+
+  giffy_base = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="
+
+    response = HTTParty.get('http://www.omdbapi.com/?t=' + movie_title)
+    movie = Movie.create(title: response["Title"], year: response["Year"].to_i, poster_url: response["Poster"], plot: response["Plot"])
+
+    actors = response["Actors"].split(", ")
+    actors[0..2].each do |actor|
+        actor.gsub!(/\P{ASCII}/, '')
+        puts actor
+        giffy_response = HTTParty.get(giffy_base + actor.downcase.gsub(" ", "+"))["data"]["image_url"]
+        movie.actors.create({name: actor, photo_url: giffy_response})
+    end
+end
+
+2. Using one API(giphy) in the controller. Have to install gem 'httparty'.
+
+def search
+    search_term = params[:q]
+    @gifs = []
+    response = HTTParty.get("http://api.giphy.com/v1/gifs/search?q=#{search_term}&api_key=dc6zaTOxFJmzC")
+    @gifs = response["data"]
+  end
+
+  def show
+    @gifs = []
+    10.times do
+      @gifs << HTTParty.get("http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&")
+    end
+  end

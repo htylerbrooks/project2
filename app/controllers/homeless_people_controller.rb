@@ -1,0 +1,2 @@
+class HomelessPeopleController < ApplicationController
+end
