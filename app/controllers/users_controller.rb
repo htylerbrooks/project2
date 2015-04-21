@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new( user_params )
         @user.save
-        redirect_to city_path(@user)
+        redirect_to city_homeless_people_path(params[:city_id])
     end
 
     private

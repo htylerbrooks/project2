@@ -2,7 +2,7 @@
 
   <% @cities .each do |city| %>
     <p><%=link_to city.name, city_path(city)%></p>
-    <img src="<%= city.img%>"
+    <img src="<%= city.img%>">
   <% end %>
 
 </div><!-- end of container  -->
