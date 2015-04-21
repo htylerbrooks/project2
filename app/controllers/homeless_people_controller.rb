@@ -1,9 +1,12 @@
 class HomelessPeopleController < ApplicationController
 
-
-  def show #show view must be exist for this to work
-    @city = City.find(params[:id]) #find the question
-    @homeless_people =  @city.homeless_people.all.find(params[:id])
+  def index
+    @users = User.all
+    @user = @users.last
+    @user_name = @user.name.capitalize
+    @city = City.find(params[:city_id]) #find the question
+    @homeless_people =  @city.homeless_people
+    @homeless_person = @homeless_people.sample
   end
 
 end

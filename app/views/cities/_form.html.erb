@@ -1,6 +1,3 @@
-
-
-
 <%= form_for @user do |q| %>
 
 <% if @user.errors.any? %>
@@ -22,6 +19,7 @@
   <%= q.text_field :gender %>
   <%= q.text_field :interest_one %>
   <%= q.text_field :interest_two %>
+  <input type="hidden" name="city_id" value= "<%=@city.id %>" />
 
 
   <%= q.submit %>
