@@ -6,6 +6,8 @@ gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+gem 'font-awesome-rails'
+
 # Use for pry to debug stuff 
 gem 'pry'
 

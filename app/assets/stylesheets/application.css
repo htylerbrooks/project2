@@ -12,4 +12,100 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+
+.container {
+	width: 83%;
+}
+ /* #Navigation*/
+/*__________________________*/
+
+ .nav__header__main {
+ 	background-color: black;
+ 	border-bottom: blue 2px solid;
+ 	padding-top:.6%;
+ 	padding-bottom:.6%;
+ 	padding-left: 2%;
+ 	padding-right: 2%;
+ }
+.nav__header__main--img img {
+	  max-height: 20px;
+}
+
+
+.nav__header__main-li i, 
+.nav__header__secondary-li li{
+	display: inline;
+	float: right;
+	padding-left: 3%;
+	color: grey;
+}
+
+.nav__header__secondary-li {
+	font-size: 12px;
+}
+.nav__header__secondary-li a {
+	color: white;
+}
+
+
+.nav__secondary { 
+	background-color: black;
+	border-top: 7px solid #009bff;
+	margin-top: 3%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	padding-left: 2%;
+	padding-right: 2%;	
+}
+.nav__secondary--topic {
+	font-size:30px;
+	font-style: bold;
+	color: #009bff;
+}
+
+
+.nav__header__secondary-li li {
+	font-size: 14px;
+	float: left;
+	display: inline-block;
+	text-align: center;
+	padding-top: 1.1%;
+	color: white;
+}
+.nav___fa { 
+	float: left;
+	color: white; 
+}
+.nav___fa i {
+	padding-left: 37px;
+}
+
+#fa-border {
+	
+}
+
+
+
+ /* #Body*/
+/*__________________________*/
+.body__container {
+	width: 96%;
+	margin-left: auto;
+    margin-right: auto;
+	border: 1px red solid;
+}
+.body__topic {
+	background-color: grey;
+}
+
+.header {
+	border: 1px solid red;
+}
+
+
+/*.row {
+	border: 1px red solid;
+}
+*/
