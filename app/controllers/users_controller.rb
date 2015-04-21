@@ -6,14 +6,14 @@ class UsersController < ApplicationController
     def create
         @user = User.new( user_params )
         if @user.save
-            redirect_to city_homeless_person_path(@user)
+            render
         else
             render :new
         end
     end
 
     private
-    def user_params
+    def user_params 
       params.require(:user).permit(:name,:age, :gender, :interest_one, :interest_two)
     end
 
