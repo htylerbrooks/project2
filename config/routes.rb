@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :homeless_people
   end
 
+  resources :users
+
   root 'cities#index'
 
   # You can have the root of your site routed with "root"

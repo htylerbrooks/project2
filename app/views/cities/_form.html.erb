@@ -1,28 +1,27 @@
 
 
 
-<%= form_for @post do |q| %>
+<%= form_for @user do |q| %>
 
-<% if @post.errors.any? %>
+<% if @user.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@post.errors.count, "error") %>
+        <%= pluralize(@user.errors.count, "error") %>
       </h2>
       <ul>
-        <% @post.errors.full_messages.each do |msg| %>
+        <% @user.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <p><%=@post.description_title%></p>
-  <%= q.text_field :title %>
-  <%= q.text_field :author %>
-  <%= q.text_field :description_title %>
-  <%= q.text_field :description_text %>
-  <%= q.text_field :description_code %>
 
+  <%= q.text_field :name %>
+  <%= q.text_field :age %>
+  <%= q.text_field :gender %>
+  <%= q.text_field :interest_one %>
+  <%= q.text_field :interest_two %>
 
 
   <%= q.submit %>
