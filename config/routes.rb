@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
 
-  resources :cities 
+  resources :cities do
+    resources :homeless_people
+  end
+
+  root 'cities#index'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
