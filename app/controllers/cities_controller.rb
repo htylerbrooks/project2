@@ -6,6 +6,7 @@ class CitiesController < ApplicationController
   def show
     @user = User.new
     @city = City.find(params[:id])
+    @homeless = @city.homeless_people
   end
 
 end

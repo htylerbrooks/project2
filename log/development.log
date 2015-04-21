@@ -5610,3 +5610,1341 @@ ActionController::UrlGenerationError (No route matches {:action=>"show", :city_i
   Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
   Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
   Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (87.0ms)
+
+
+Started GET "/cities" for ::1 at 2015-04-21 17:18:52 -0400
+Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered cities/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 74ms (Views: 70.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 17:18:55 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered cities/_form.html.erb (1.1ms)
+  Rendered cities/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 75ms (Views: 69.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for ::1 at 2015-04-21 17:18:56 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mZ2okU0mhsskBgz2EpMoefZw6/5K02udezlUEZyws0apz8oEugII7ZLX/QYUN5XLEOJRqnOHXYzLYXgtzquF5A==", "user"=>{"name"=>"", "age"=>"", "gender"=>"", "interest_one"=>"", "interest_two"=>""}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "gender", "interest_one", "interest_two", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", ""], ["gender", ""], ["interest_one", ""], ["interest_two", ""], ["created_at", "2015-04-21 21:18:56.495996"], ["updated_at", "2015-04-21 21:18:56.495996"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.2ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"homeless_people"} missing required keys: [:city_id, :id]):
+  app/controllers/users_controller.rb:9:in `create'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.9ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (38.6ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (83.8ms)
+
+
+Started GET "/cities" for ::1 at 2015-04-21 17:19:51 -0400
+Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered cities/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 74ms (Views: 70.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 17:19:53 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered cities/_form.html.erb (1.3ms)
+  Rendered cities/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 83ms (Views: 75.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for ::1 at 2015-04-21 17:19:54 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cp9C+hf6GlDs/2aCLxYnMH96v2yuaV+a9IccZl7eQRpCzSBv4N6Udloul3IpspqCmegFOJc9aYtE3zBaDMV3uA==", "user"=>{"name"=>"", "age"=>"", "gender"=>"", "interest_one"=>"", "interest_two"=>""}, "commit"=>"Create User"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", nil]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find City with 'id'=):
+  app/controllers/users_controller.rb:7:in `create'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.9ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (35.1ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (79.5ms)
+
+
+Started GET "/cities" for ::1 at 2015-04-21 17:22:12 -0400
+Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered cities/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 107ms (Views: 102.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/cities/2" for ::1 at 2015-04-21 17:22:13 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered cities/_form.html.erb (1.6ms)
+  Rendered cities/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 89ms (Views: 80.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cities/2/homeless_people/10" for ::1 at 2015-04-21 17:22:26 -0400
+Processing by HomelessPeopleController#show as HTML
+  Parameters: {"city_id"=>"2", "id"=>"10"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 10]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find City with 'id'=10):
+  app/controllers/homeless_people_controller.rb:5:in `show'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (33.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (74.1ms)
+
+
+Started GET "/cities/2/homeless_people/5" for ::1 at 2015-04-21 17:22:30 -0400
+Processing by HomelessPeopleController#show as HTML
+  Parameters: {"city_id"=>"2", "id"=>"5"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find City with 'id'=5):
+  app/controllers/homeless_people_controller.rb:5:in `show'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (41.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (85.4ms)
+
+
+Started GET "/cities/2/homeless_people/1" for ::1 at 2015-04-21 17:22:33 -0400
+Processing by HomelessPeopleController#show as HTML
+  Parameters: {"city_id"=>"2", "id"=>"1"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHomelessPerson Load (0.2ms)[0m  [1mSELECT  "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1 AND "homeless_people"."id" = $2 LIMIT 1[0m  [["city_id", 1], ["id", 1]]
+  Rendered homeless_people/show.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.1ms)
+
+ActionView::Template::Error (undefined method `each' for #<HomelessPerson:0x007fe8ea7d2e38>):
+    1: <% @homeless_people.each do |person|%>
+    2:  <%= person.name %>
+    3:  <%= person.age %>
+    4: <% end %>
+  app/views/homeless_people/show.html.erb:1:in `_app_views_homeless_people_show_html_erb___2816621096488449008_70319176576740'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (46.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (32.8ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (76.7ms)
+
+
+Started GET "/cities/2/homeless_people/2" for ::1 at 2015-04-21 17:22:36 -0400
+Processing by HomelessPeopleController#show as HTML
+  Parameters: {"city_id"=>"2", "id"=>"2"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mHomelessPerson Load (0.3ms)[0m  [1mSELECT  "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1 AND "homeless_people"."id" = $2 LIMIT 1[0m  [["city_id", 2], ["id", 2]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.4ms)
+
+ActiveRecord::RecordNotFound (Couldn't find HomelessPerson with 'id'=2 [WHERE "homeless_people"."city_id" = ?]):
+  app/controllers/homeless_people_controller.rb:6:in `show'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (32.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (72.1ms)
+
+
+Started GET "/cities/2/homeless_people/2" for ::1 at 2015-04-21 17:22:46 -0400
+Processing by HomelessPeopleController#show as HTML
+  Parameters: {"city_id"=>"2", "id"=>"2"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mHomelessPerson Load (0.1ms)[0m  [1mSELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1[0m  [["city_id", 2]]
+  Rendered homeless_people/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 94ms (Views: 84.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/cities" for ::1 at 2015-04-21 17:23:02 -0400
+Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered cities/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 81ms (Views: 80.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities/2" for ::1 at 2015-04-21 17:23:03 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered cities/_form.html.erb (1.2ms)
+  Rendered cities/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 87ms (Views: 81.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2015-04-21 17:24:09 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hD6vV4ZqQ/bteHbo+f16cUoQ/Qd2Jju2WRAGeNMFULy0bM3CcU7N0Fuphxj/WcfDrIJHU09yDafpSCpEgR5mHg==", "user"=>{"name"=>"", "age"=>"", "gender"=>"", "interest_one"=>"", "interest_two"=>""}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "gender", "interest_one", "interest_two", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", ""], ["gender", ""], ["interest_one", ""], ["interest_two", ""], ["created_at", "2015-04-21 21:24:09.089052"], ["updated_at", "2015-04-21 21:24:09.089052"]]
+  [1m[35m (6.2ms)[0m  COMMIT
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 7.8ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"homeless_people"} missing required keys: [:city_id, :id]):
+  app/controllers/users_controller.rb:9:in `create'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.7ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (37.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (88.0ms)
+
+
+Started GET "/cities" for ::1 at 2015-04-21 17:24:13 -0400
+Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered cities/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 80ms (Views: 76.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 17:24:14 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered cities/_form.html.erb (1.1ms)
+  Rendered cities/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 78ms (Views: 76.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users" for ::1 at 2015-04-21 17:24:15 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vwLRC9J57aE3FJ+dFn9CzOQNLLrpfB3jIbOsu9Sb3PaPULOeJV1jh4HFbm0Q2/9+Ap+W7tAoK/KR64CHhoDqVA==", "user"=>{"name"=>"", "age"=>"", "gender"=>"", "interest_one"=>"", "interest_two"=>""}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "gender", "interest_one", "interest_two", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", ""], ["gender", ""], ["interest_one", ""], ["interest_two", ""], ["created_at", "2015-04-21 21:24:15.397266"], ["updated_at", "2015-04-21 21:24:15.397266"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.0ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"homeless_people"} missing required keys: [:city_id, :id]):
+  app/controllers/users_controller.rb:9:in `create'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (36.1ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (80.5ms)
+
+
+Started POST "/users" for ::1 at 2015-04-21 17:24:23 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vwLRC9J57aE3FJ+dFn9CzOQNLLrpfB3jIbOsu9Sb3PaPULOeJV1jh4HFbm0Q2/9+Ap+W7tAoK/KR64CHhoDqVA==", "user"=>{"name"=>"", "age"=>"", "gender"=>"", "interest_one"=>"", "interest_two"=>""}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "gender", "interest_one", "interest_two", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", ""], ["gender", ""], ["interest_one", ""], ["interest_two", ""], ["created_at", "2015-04-21 21:24:23.769186"], ["updated_at", "2015-04-21 21:24:23.769186"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 2.3ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"homeless_people"} missing required keys: [:city_id, :id]):
+  app/controllers/users_controller.rb:9:in `create'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.7ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (36.1ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (79.6ms)
+
+
+Started GET "/" for ::1 at 2015-04-21 17:24:49 -0400
+Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered cities/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 93ms (Views: 90.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/cities" for ::1 at 2015-04-21 17:24:50 -0400
+Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered cities/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 81ms (Views: 80.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 17:24:52 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered cities/_form.html.erb (1.5ms)
+  Rendered cities/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 85ms (Views: 77.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2015-04-21 17:24:54 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BEW5BT3RmuKBJKBMK+iAJXWheOy+nxuwxbDGOWsOQMY0F9uQyvUUxDf1UbwtTD2XkzPCuIfLLaF16OoFORV2ZA==", "user"=>{"name"=>"", "age"=>"", "gender"=>"", "interest_one"=>"", "interest_two"=>""}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "gender", "interest_one", "interest_two", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", ""], ["gender", ""], ["interest_one", ""], ["interest_two", ""], ["created_at", "2015-04-21 21:24:54.606404"], ["updated_at", "2015-04-21 21:24:54.606404"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.2ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :city_id=>#<User id: 27, name: "", age: nil, gender: "", interest_one: "", interest_two: "", created_at: "2015-04-21 21:24:54", updated_at: "2015-04-21 21:24:54">, :controller=>"homeless_people", :id=>nil} missing required keys: [:id]):
+  app/controllers/users_controller.rb:9:in `create'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.0ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (33.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (77.8ms)
+
+
+Started GET "/cities" for ::1 at 2015-04-21 17:25:55 -0400
+Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered cities/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 75ms (Views: 71.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 17:25:56 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered cities/_form.html.erb (1.1ms)
+  Rendered cities/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 75ms (Views: 68.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for ::1 at 2015-04-21 17:25:59 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zzILddAuvg+Mb2obPt3p2P3ZpXQpTXK6vpDVRHved4H/YGngJwowKTq+m+s4eVRqG0sfIBAZRKsOyPl4KcVBIw==", "user"=>{"name"=>"", "age"=>"", "gender"=>"", "interest_one"=>"", "interest_two"=>""}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "gender", "interest_one", "interest_two", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", ""], ["gender", ""], ["interest_one", ""], ["interest_two", ""], ["created_at", "2015-04-21 21:25:59.405375"], ["updated_at", "2015-04-21 21:25:59.405375"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.0ms)
+
+ActionView::MissingTemplate (Missing template users/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/bradfoster/temp/project2/app/views"
+):
+  actionview (4.2.1) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.1) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.1) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.1) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/bradfoster/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_process_action_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  rack (1.6.0) lib/rack/etag.rb:24:in `call'
+  rack (1.6.0) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.0) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/bradfoster/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/bradfoster/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/bradfoster/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (45.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (38.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (82.6ms)
+
+
+Started POST "/users" for ::1 at 2015-04-21 17:26:18 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H2Z/P8o/zlriIslmRY7WFFiHtcbAKuOyx3wISRN1OQwvNB2qPRtAfFTzOJZDKmumvhUPkvl+1aN3JCR1QW4Prg==", "user"=>{"name"=>"", "age"=>"", "gender"=>"", "interest_one"=>"", "interest_two"=>""}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "gender", "interest_one", "interest_two", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", ""], ["gender", ""], ["interest_one", ""], ["interest_two", ""], ["created_at", "2015-04-21 21:26:18.297972"], ["updated_at", "2015-04-21 21:26:18.297972"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/cities
+Completed 302 Found in 9ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/cities" for ::1 at 2015-04-21 17:26:18 -0400
+Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered cities/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 84ms (Views: 81.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 17:26:19 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered cities/_form.html.erb (1.2ms)
+  Rendered cities/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 79ms (Views: 77.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users" for ::1 at 2015-04-21 17:27:14 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u9Xs13mPuyw2+z4FsdyAVzsSzm2LA1TXXDAbZq8Am6mLh45Cjqs1CoAqz/W3eD3l3YB0ObJXYsbsaDda/RutCw==", "user"=>{"name"=>"", "age"=>"", "gender"=>"", "interest_one"=>"", "interest_two"=>""}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "gender", "interest_one", "interest_two", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", ""], ["gender", ""], ["interest_one", ""], ["interest_two", ""], ["created_at", "2015-04-21 21:27:14.860118"], ["updated_at", "2015-04-21 21:27:14.860118"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 2.2ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"cities"} missing required keys: [:id]):
+  app/controllers/users_controller.rb:9:in `create'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.6ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (33.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (75.1ms)
+
+
+Started POST "/users" for ::1 at 2015-04-21 17:27:35 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y62j5Q2zuEgeRIxgu6ZKVL+tPjZws5SozamSHRxdHTNT/8Fw+pc2bqiVfZC9AvfmWT+EYknnorl98b4hTkYrkQ==", "user"=>{"name"=>"", "age"=>"", "gender"=>"", "interest_one"=>"", "interest_two"=>""}, "commit"=>"Create User"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", nil]]
+Completed 404 Not Found in 5ms (ActiveRecord: 1.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find City with 'id'=):
+  app/controllers/users_controller.rb:7:in `create'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.0ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (43.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (37.0ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (77.7ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 17:28:30 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered cities/_form.html.erb (1.5ms)
+  Rendered cities/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 87ms (Views: 75.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap-theme.self-fa9e5cf6a4a9fe244ce9f7d34b03f9cff6c02783790cf62135d654587a086dd7.css?body=1" for ::1 at 2015-04-21 17:28:30 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap-theme.min.self-fee8ad547a5946f07de3f878f9f10e5e10d0d241649f1778c92e21fee13e7e3c.css?body=1" for ::1 at 2015-04-21 17:28:30 -0400
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 17:28:30 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap.min.self-a2136f50814e64f3dc4cd000975604947d7f3d0a16f1d66295e17c1040ace54f.css?body=1" for ::1 at 2015-04-21 17:28:30 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap.self-46d5751ac0b7f114cb4294988143af531aa069b7a249f3928840faa1600e9cf3.css?body=1" for ::1 at 2015-04-21 17:28:30 -0400
+
+
+Started GET "/assets/homeless_people.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 17:28:30 -0400
+
+
+Started GET "/assets/normalize.self-04f59fec8725783a0d08327c9c38d82f8f364c62606134256e17a3ba3f1a29f0.css?body=1" for ::1 at 2015-04-21 17:28:30 -0400
+
+
+Started GET "/assets/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 17:28:30 -0400
+
+
+Started GET "/assets/application.self-61c186916392ef60c95e353840a7c21db7997114efe3729096c039155b24013d.css?body=1" for ::1 at 2015-04-21 17:28:30 -0400
+
+
+Started GET "/assets/font-awesome.self-2d17540bab3759939e910ca38a695f014e0c777ded3ad7a01c4658b9d3fc980d.css?body=1" for ::1 at 2015-04-21 17:28:30 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-21 17:28:30 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-21 17:28:30 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-21 17:28:30 -0400
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 17:28:30 -0400
+
+
+Started GET "/assets/homeless_people.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 17:28:30 -0400
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 17:28:30 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-21 17:28:30 -0400
+
+
+Started POST "/users" for ::1 at 2015-04-21 17:28:32 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j2J9Wzr/XphN/DtOooeoe8JeQGZazIVS/Sxod3WT4aq/MB/OzdvQvvstyr6kIxXJJMz6MmOYs0NNdERLJ4jXCA==", "user"=>{"name"=>"", "age"=>"", "gender"=>"", "interest_one"=>"", "interest_two"=>""}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "gender", "interest_one", "interest_two", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", ""], ["gender", ""], ["interest_one", ""], ["interest_two", ""], ["created_at", "2015-04-21 21:28:32.837445"], ["updated_at", "2015-04-21 21:28:32.837445"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/cities/31
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/cities/31" for ::1 at 2015-04-21 17:28:32 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 31]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find City with 'id'=31):
+  app/controllers/cities_controller.rb:8:in `show'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (47.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (37.8ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (84.1ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 17:31:43 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered cities/_form.html.erb (1.1ms)
+  Rendered cities/show.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+SyntaxError (/Users/bradfoster/temp/project2/app/views/cities/_form.html.erb:4: syntax error, unexpected ',', expecting ')'
+...uffer.append=  form_for (@user, :url => city_homeless_person...
+...                               ^
+/Users/bradfoster/temp/project2/app/views/cities/_form.html.erb:4: syntax error, unexpected =>, expecting :: or '[' or '.'
+..._homeless_person_path, :html => { :method => "get"}) do |q| ...
+...                               ^
+/Users/bradfoster/temp/project2/app/views/cities/_form.html.erb:4: syntax error, unexpected ')', expecting keyword_end
+..., :html => { :method => "get"}) do |q| @output_buffer.safe_a...
+...                               ^
+/Users/bradfoster/temp/project2/app/views/cities/_form.html.erb:31: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/cities/_form.html.erb:4: syntax error, unexpected ',', expecting ')'
+  app/views/cities/_form.html.erb:4: syntax error, unexpected =>, expecting :: or '[' or '.'
+  app/views/cities/_form.html.erb:4: syntax error, unexpected ')', expecting keyword_end
+  app/views/cities/_form.html.erb:31: syntax error, unexpected keyword_ensure, expecting end-of-input
+  app/views/cities/show.html.erb:11:in `_app_views_cities_show_html_erb___46663656956568535_70319250711880'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (47.6ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (34.9ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (76.4ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 17:32:36 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered cities/_form.html.erb (1.7ms)
+  Rendered cities/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 70ms (Views: 69.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap-theme.self-fa9e5cf6a4a9fe244ce9f7d34b03f9cff6c02783790cf62135d654587a086dd7.css?body=1" for ::1 at 2015-04-21 17:32:36 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap-theme.min.self-fee8ad547a5946f07de3f878f9f10e5e10d0d241649f1778c92e21fee13e7e3c.css?body=1" for ::1 at 2015-04-21 17:32:36 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap.self-46d5751ac0b7f114cb4294988143af531aa069b7a249f3928840faa1600e9cf3.css?body=1" for ::1 at 2015-04-21 17:32:36 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap.min.self-a2136f50814e64f3dc4cd000975604947d7f3d0a16f1d66295e17c1040ace54f.css?body=1" for ::1 at 2015-04-21 17:32:36 -0400
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 17:32:36 -0400
+
+
+Started GET "/assets/normalize.self-04f59fec8725783a0d08327c9c38d82f8f364c62606134256e17a3ba3f1a29f0.css?body=1" for ::1 at 2015-04-21 17:32:36 -0400
+
+
+Started GET "/assets/homeless_people.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 17:32:36 -0400
+
+
+Started GET "/assets/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 17:32:36 -0400
+
+
+Started GET "/assets/application.self-61c186916392ef60c95e353840a7c21db7997114efe3729096c039155b24013d.css?body=1" for ::1 at 2015-04-21 17:32:36 -0400
+
+
+Started GET "/assets/font-awesome.self-2d17540bab3759939e910ca38a695f014e0c777ded3ad7a01c4658b9d3fc980d.css?body=1" for ::1 at 2015-04-21 17:32:36 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-21 17:32:36 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-21 17:32:37 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-21 17:32:37 -0400
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 17:32:37 -0400
+
+
+Started GET "/assets/homeless_people.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 17:32:37 -0400
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 17:32:37 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-21 17:32:37 -0400
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 17:33:21 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered cities/_form.html.erb (1.3ms)
+  Rendered cities/show.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"homeless_people", :id=>"1"} missing required keys: [:city_id]):
+    10: 
+    11:   <%= render 'form' %>
+    12: 
+    13:   <%= link_to "View homeless people", city_homeless_person_path %>
+    14: 
+    15: </div><!-- end of container  -->
+  app/views/cities/show.html.erb:13:in `_app_views_cities_show_html_erb___46663656956568535_70319231928020'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (42.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (34.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (73.8ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 17:33:40 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered cities/_form.html.erb (1.0ms)
+  Rendered cities/show.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :city_id=>#<City id: 1, name: "Chicago", homeless_pop: 44505, img: "http://i.imgur.com/KEwYHZP.png", homeless_bio: "Under Construction", created_at: "2015-04-21 20:41:38", updated_at: "2015-04-21 20:41:38">, :controller=>"homeless_people", :id=>nil} missing required keys: [:id]):
+    10: 
+    11:   <%= render 'form' %>
+    12: 
+    13:   <%= link_to "View homeless people", city_homeless_person_path(@city) %>
+    14: 
+    15: </div><!-- end of container  -->
+  app/views/cities/show.html.erb:13:in `_app_views_cities_show_html_erb___46663656956568535_70319232827500'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (41.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (33.9ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (74.4ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 17:34:05 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered cities/_form.html.erb (0.9ms)
+  [1m[36mHomelessPerson Load (0.1ms)[0m  [1mSELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1[0m  [["city_id", 1]]
+  Rendered cities/show.html.erb within layouts/application (14.5ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.2ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :city_id=>#<ActiveRecord::Associations::CollectionProxy [#<HomelessPerson id: 1, name: "Ron Trump", age: 46, gender: "Male", interest: "Enjoys feeding the ducks at the Wicker Park", story: "Under Construction", img: "http://i.imgur.com/dHrBwfs.png", city_id: 1, created_at: "2015-04-21 20:41:38", updated_at: "2015-04-21 20:41:38">, #<HomelessPerson id: 2, name: "Tina Khan", age: 38, gender: "Female", interest: "Watching the sunset over Lake Michigan on Lake Sho...", story: "Under Construction", img: "http://i.imgur.com/heGlKb2.png", city_id: 1, created_at: "2015-04-21 20:41:38", updated_at: "2015-04-21 20:41:38">, #<HomelessPerson id: 3, name: "Trey Kemp", age: 22, gender: "Male", interest: "Da Bulls and Da Bears", story: "Under Construction", img: "http://i.imgur.com/ZO5M8nR.png", city_id: 1, created_at: "2015-04-21 20:41:38", updated_at: "2015-04-21 20:41:38">, #<HomelessPerson id: 4, name: "Ryan Morgan", age: 16, gender: "Male", interest: "Staring up at the Sears Tower", story: "Under Construction", img: "http://i.imgur.com/LUy1aI1.png", city_id: 1, created_at: "2015-04-21 20:41:38", updated_at: "2015-04-21 20:41:38">]>, :controller=>"homeless_people", :id=>nil} missing required keys: [:id]):
+    10: 
+    11:   <%= render 'form' %>
+    12: 
+    13:   <%= link_to "View homeless people", city_homeless_person_path(@city.homeless_people) %>
+    14: 
+    15: </div><!-- end of container  -->
+  app/views/cities/show.html.erb:13:in `_app_views_cities_show_html_erb___46663656956568535_70319216824320'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (42.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (34.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (75.3ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 17:34:15 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered cities/_form.html.erb (1.0ms)
+  Rendered cities/show.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :city_id=>#<City id: 1, name: "Chicago", homeless_pop: 44505, img: "http://i.imgur.com/KEwYHZP.png", homeless_bio: "Under Construction", created_at: "2015-04-21 20:41:38", updated_at: "2015-04-21 20:41:38">, :controller=>"homeless_people", :id=>nil} missing required keys: [:id]):
+    10: 
+    11:   <%= render 'form' %>
+    12: 
+    13:   <%= link_to "View homeless people", city_homeless_person_path(@city) %>
+    14: 
+    15: </div><!-- end of container  -->
+  app/views/cities/show.html.erb:13:in `_app_views_cities_show_html_erb___46663656956568535_70319181783300'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (42.0ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (33.7ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (73.4ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 17:35:02 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mHomelessPerson Load (0.1ms)[0m  SELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1  [["city_id", 1]]
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 2.4ms)
+
+NoMethodError (undefined method `id' for #<HomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8f2295440>):
+  app/controllers/cities_controller.rb:9:in `show'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (33.6ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (73.1ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 17:35:16 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered cities/_form.html.erb (1.1ms)
+  Rendered cities/show.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 2.4ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :city_id=>#<City id: 1, name: "Chicago", homeless_pop: 44505, img: "http://i.imgur.com/KEwYHZP.png", homeless_bio: "Under Construction", created_at: "2015-04-21 20:41:38", updated_at: "2015-04-21 20:41:38">, :controller=>"homeless_people", :id=>nil} missing required keys: [:id]):
+    10: 
+    11:   <%= render 'form' %>
+    12: 
+    13:   <%= link_to "View homeless people", city_homeless_person_path(@city) %>
+    14: 
+    15: </div><!-- end of container  -->
+  app/views/cities/show.html.erb:13:in `_app_views_cities_show_html_erb___46663656956568535_70319181783300'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (42.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (36.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (85.4ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 17:35:37 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered cities/_form.html.erb (0.9ms)
+  Rendered cities/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 73ms (Views: 71.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap-theme.self-fa9e5cf6a4a9fe244ce9f7d34b03f9cff6c02783790cf62135d654587a086dd7.css?body=1" for ::1 at 2015-04-21 17:35:37 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap-theme.min.self-fee8ad547a5946f07de3f878f9f10e5e10d0d241649f1778c92e21fee13e7e3c.css?body=1" for ::1 at 2015-04-21 17:35:37 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap.self-46d5751ac0b7f114cb4294988143af531aa069b7a249f3928840faa1600e9cf3.css?body=1" for ::1 at 2015-04-21 17:35:37 -0400
+
+
+Started GET "/assets/normalize.self-04f59fec8725783a0d08327c9c38d82f8f364c62606134256e17a3ba3f1a29f0.css?body=1" for ::1 at 2015-04-21 17:35:37 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap.min.self-a2136f50814e64f3dc4cd000975604947d7f3d0a16f1d66295e17c1040ace54f.css?body=1" for ::1 at 2015-04-21 17:35:37 -0400
+
+
+Started GET "/assets/homeless_people.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 17:35:37 -0400
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 17:35:37 -0400
+
+
+Started GET "/assets/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 17:35:37 -0400
+
+
+Started GET "/assets/application.self-61c186916392ef60c95e353840a7c21db7997114efe3729096c039155b24013d.css?body=1" for ::1 at 2015-04-21 17:35:37 -0400
+
+
+Started GET "/assets/font-awesome.self-2d17540bab3759939e910ca38a695f014e0c777ded3ad7a01c4658b9d3fc980d.css?body=1" for ::1 at 2015-04-21 17:35:37 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-21 17:35:37 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-21 17:35:37 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-21 17:35:37 -0400
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 17:35:37 -0400
+
+
+Started GET "/assets/homeless_people.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 17:35:37 -0400
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 17:35:37 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-21 17:35:37 -0400
+
+
+Started GET "/cities/1/homeless_people/%23%3CHomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8f1af2440%3E" for ::1 at 2015-04-21 17:35:40 -0400
+Processing by HomelessPeopleController#show as HTML
+  Parameters: {"city_id"=>"1", "id"=>"#<HomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8f1af2440>"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find City with 'id'=#<HomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8f1af2440>):
+  app/controllers/homeless_people_controller.rb:5:in `show'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.0ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (37.6ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (88.7ms)
+
+
+Started GET "/cities/1/homeless_people/%23%3CHomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8f1af2440%3E" for ::1 at 2015-04-21 17:35:40 -0400
+Processing by HomelessPeopleController#show as HTML
+  Parameters: {"city_id"=>"1", "id"=>"#<HomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8f1af2440>"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find City with 'id'=#<HomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8f1af2440>):
+  app/controllers/homeless_people_controller.rb:5:in `show'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (46.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (36.7ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (77.1ms)
+
+
+Started GET "/cities" for ::1 at 2015-04-21 17:35:48 -0400
+Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered cities/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 68ms (Views: 66.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities/2" for ::1 at 2015-04-21 17:35:50 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered cities/_form.html.erb (1.3ms)
+  Rendered cities/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 71ms (Views: 69.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities/2/homeless_people/%23%3CHomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8efeeb5d0%3E" for ::1 at 2015-04-21 17:35:51 -0400
+Processing by HomelessPeopleController#show as HTML
+  Parameters: {"city_id"=>"2", "id"=>"#<HomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8efeeb5d0>"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find City with 'id'=#<HomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8efeeb5d0>):
+  app/controllers/homeless_people_controller.rb:5:in `show'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.1ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (33.8ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (77.5ms)
+
+
+Started GET "/cities/2/homeless_people/%23%3CHomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8efeeb5d0%3E" for ::1 at 2015-04-21 17:35:52 -0400
+Processing by HomelessPeopleController#show as HTML
+  Parameters: {"city_id"=>"2", "id"=>"#<HomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8efeeb5d0>"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find City with 'id'=#<HomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8efeeb5d0>):
+  app/controllers/homeless_people_controller.rb:5:in `show'
+
+
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (50.0ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (40.5ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/bradfoster/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (87.1ms)
+
+
+Started GET "/cities/2/homeless_people/%23%3CHomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8efeeb5d0%3E" for ::1 at 2015-04-21 17:36:19 -0400
+Processing by HomelessPeopleController#show as HTML
+  Parameters: {"city_id"=>"2", "id"=>"#<HomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8efeeb5d0>"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mHomelessPerson Load (0.2ms)[0m  SELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1  [["city_id", 2]]
+  Rendered homeless_people/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 107ms (Views: 98.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap-theme.self-fa9e5cf6a4a9fe244ce9f7d34b03f9cff6c02783790cf62135d654587a086dd7.css?body=1" for ::1 at 2015-04-21 17:36:19 -0400
+
+
+Started GET "/assets/cities.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 17:36:19 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap.min.self-a2136f50814e64f3dc4cd000975604947d7f3d0a16f1d66295e17c1040ace54f.css?body=1" for ::1 at 2015-04-21 17:36:19 -0400
+
+
+Started GET "/assets/homeless_people.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 17:36:19 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap-theme.min.self-fee8ad547a5946f07de3f878f9f10e5e10d0d241649f1778c92e21fee13e7e3c.css?body=1" for ::1 at 2015-04-21 17:36:19 -0400
+
+
+Started GET "/assets/bootstrap-3.2.0-dist/css/bootstrap.self-46d5751ac0b7f114cb4294988143af531aa069b7a249f3928840faa1600e9cf3.css?body=1" for ::1 at 2015-04-21 17:36:19 -0400
+
+
+Started GET "/assets/normalize.self-04f59fec8725783a0d08327c9c38d82f8f364c62606134256e17a3ba3f1a29f0.css?body=1" for ::1 at 2015-04-21 17:36:19 -0400
+
+
+Started GET "/assets/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-21 17:36:19 -0400
+
+
+Started GET "/assets/application.self-61c186916392ef60c95e353840a7c21db7997114efe3729096c039155b24013d.css?body=1" for ::1 at 2015-04-21 17:36:19 -0400
+
+
+Started GET "/assets/font-awesome.self-2d17540bab3759939e910ca38a695f014e0c777ded3ad7a01c4658b9d3fc980d.css?body=1" for ::1 at 2015-04-21 17:36:19 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-21 17:36:19 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-21 17:36:19 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-21 17:36:19 -0400
+
+
+Started GET "/assets/cities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 17:36:19 -0400
+
+
+Started GET "/assets/homeless_people.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 17:36:19 -0400
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-21 17:36:19 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-21 17:36:19 -0400
+
+
+Started GET "/cities" for ::1 at 2015-04-21 17:36:22 -0400
+Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered cities/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 87ms (Views: 85.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities/2" for ::1 at 2015-04-21 17:36:24 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered cities/_form.html.erb (1.4ms)
+  Rendered cities/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 99ms (Views: 90.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 17:36:29 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered cities/_form.html.erb (0.9ms)
+  Rendered cities/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 83ms (Views: 81.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities/1/homeless_people/%23%3CHomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8efb317f0%3E" for ::1 at 2015-04-21 17:36:31 -0400
+Processing by HomelessPeopleController#show as HTML
+  Parameters: {"city_id"=>"1", "id"=>"#<HomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8efb317f0>"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHomelessPerson Load (0.1ms)[0m  [1mSELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1[0m  [["city_id", 1]]
+  Rendered homeless_people/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 81ms (Views: 80.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cities/1/homeless_people/%23%3CHomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8efb317f0%3E" for ::1 at 2015-04-21 17:36:41 -0400
+Processing by HomelessPeopleController#show as HTML
+  Parameters: {"city_id"=>"1", "id"=>"#<HomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8efb317f0>"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHomelessPerson Load (0.1ms)[0m  [1mSELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1[0m  [["city_id", 1]]
+  Rendered homeless_people/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 94ms (Views: 92.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cities/1/homeless_people/%23%3CHomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8efb317f0%3E" for ::1 at 2015-04-21 17:36:49 -0400
+Processing by HomelessPeopleController#show as HTML
+  Parameters: {"city_id"=>"1", "id"=>"#<HomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8efb317f0>"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHomelessPerson Load (0.1ms)[0m  [1mSELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1[0m  [["city_id", 1]]
+  Rendered homeless_people/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 76ms (Views: 73.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cities/1/homeless_people/%23%3CHomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8efb317f0%3E" for ::1 at 2015-04-21 17:37:20 -0400
+Processing by HomelessPeopleController#show as HTML
+  Parameters: {"city_id"=>"1", "id"=>"#<HomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8efb317f0>"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHomelessPerson Load (0.1ms)[0m  [1mSELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1[0m  [["city_id", 1]]
+  Rendered homeless_people/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 76ms (Views: 74.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cities/3" for ::1 at 2015-04-21 17:37:24 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered cities/_form.html.erb (1.0ms)
+  Rendered cities/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 75ms (Views: 73.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities/3/homeless_people/%23%3CHomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8f1cd3598%3E" for ::1 at 2015-04-21 17:37:25 -0400
+Processing by HomelessPeopleController#show as HTML
+  Parameters: {"city_id"=>"3", "id"=>"#<HomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8f1cd3598>"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mHomelessPerson Load (0.1ms)[0m  SELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1  [["city_id", 3]]
+  Rendered homeless_people/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 82ms (Views: 81.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-21 17:37:49 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered cities/_form.html.erb (0.9ms)
+  Rendered cities/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 84ms (Views: 82.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities/1/homeless_people/%23%3CHomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8ea6c8d30%3E" for ::1 at 2015-04-21 17:37:50 -0400
+Processing by HomelessPeopleController#show as HTML
+  Parameters: {"city_id"=>"1", "id"=>"#<HomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8ea6c8d30>"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHomelessPerson Load (0.1ms)[0m  [1mSELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1[0m  [["city_id", 1]]
+  Rendered homeless_people/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 68ms (Views: 66.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cities/1/homeless_people/%23%3CHomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8ea6c8d30%3E" for ::1 at 2015-04-21 17:38:17 -0400
+Processing by HomelessPeopleController#show as HTML
+  Parameters: {"city_id"=>"1", "id"=>"#<HomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8ea6c8d30>"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHomelessPerson Load (0.1ms)[0m  [1mSELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1[0m  [["city_id", 1]]
+  Rendered homeless_people/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 82ms (Views: 80.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cities/1/homeless_people/%23%3CHomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8ea6c8d30%3E" for ::1 at 2015-04-21 17:38:21 -0400
+Processing by HomelessPeopleController#show as HTML
+  Parameters: {"city_id"=>"1", "id"=>"#<HomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8ea6c8d30>"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHomelessPerson Load (0.2ms)[0m  [1mSELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1[0m  [["city_id", 1]]
+  Rendered homeless_people/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 81ms (Views: 79.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cities" for ::1 at 2015-04-21 17:38:24 -0400
+Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered cities/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 75ms (Views: 74.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities/2" for ::1 at 2015-04-21 17:38:27 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered cities/_form.html.erb (0.9ms)
+  Rendered cities/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 76ms (Views: 75.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/cities/2/homeless_people/%23%3CHomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8f3e265d8%3E" for ::1 at 2015-04-21 17:38:29 -0400
+Processing by HomelessPeopleController#show as HTML
+  Parameters: {"city_id"=>"2", "id"=>"#<HomelessPerson::ActiveRecord_Associations_CollectionProxy:0x007fe8f3e265d8>"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mHomelessPerson Load (0.1ms)[0m  [1mSELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1[0m  [["city_id", 2]]
+  Rendered homeless_people/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 68ms (Views: 66.8ms | ActiveRecord: 0.2ms)
