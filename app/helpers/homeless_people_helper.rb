@@ -1,0 +1,2 @@
+module HomelessPeopleHelper
+end
