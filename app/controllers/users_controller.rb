@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new( user_params )
         if @user.save
-            redirect_to city_homeless_person_path(@user.id)
+            redirect_to city_homeless_person_path(@user)
         else
             render :new
         end
