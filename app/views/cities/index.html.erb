@@ -6,11 +6,9 @@
 <div class="row">
   <% @cities .each do |city| %>
  	 <div class="col-md-3">
-
  	 	<div class="img">
-		    <img src="<%= city.img%>">
+		   <img src= "<%= city.img %>">
 		 </div>
-
 		    <p class="state"><%=link_to city.name, city_path(city)%></p>
 
   	 </div><!-- end of col-md-4  -->
