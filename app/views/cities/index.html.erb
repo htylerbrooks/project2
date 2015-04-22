@@ -1,8 +1,22 @@
 <div class="container">
 
+
+<h1 class="section__header--xl"> Choose A City
+</h1>
+<div class="row">
   <% @cities .each do |city| %>
-    <p><%=link_to city.name, city_path(city)%></p>
-    <img src="<%= city.img%>">
-  <% end %>
+ 	 <div class="col-md-3">
+
+ 	 	<div class="img">
+		    <img src="<%= city.img%>">
+		 </div>
+
+		    <p class="state"><%=link_to city.name, city_path(city)%></p>
+
+  	 </div><!-- end of col-md-4  --> 
+   <% end %>
+ 
+
+ </div><!-- end of row  -->
 
 </div><!-- end of container  -->
