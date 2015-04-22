@@ -2,6 +2,11 @@
 
 <div class="container">
 
+	<div class="breadcrumbs breadcrumbs_show">
+			  <a><%=link_to "All", cities_path%></a>
+			  > <a><%=link_to "City", city_path(@city)%></a>
+	</div>
+
 	<h1 class="section__header--xl"> <%=@city.name%>
 	</h1>
 
@@ -16,12 +21,10 @@
 	</div><!-- end of col-md-6 -->
 
 
-
-
 	<div class="col-md-5">
 
 		<div class="row content">
-				  <p><span class="content__label">Background:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				  <p><span class="content__label">Background:</span> <%=@city.homeless_bio%></p>
 		</div>
 
 		<div class="row content">
@@ -29,7 +32,7 @@
 				</div>
 
 				<div class="row content">
-				  <p><span class="content__label">Percentage of Homeless:</span>   9999</p>
+				  <p><span class="content__label">Percentage of Homeless:</span> 9999</p>
 				 </div>
 
 				 <div class="row content">
