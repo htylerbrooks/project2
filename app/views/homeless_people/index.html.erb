@@ -5,5 +5,11 @@
 	<%= @homeless_person.name %>
 	<%= @homeless_person.age %>
 	<%= image_tag @homeless_person.img %>
+	<ul>
+		<li><%= link_to( "Here is a way to Help!",@homeless_person.help, :target => "_blank") %> </li>
+		<li><%= link_to("Click here to help #{@homeless_person.name}!",@homeless_person.help2, :target => "_blank") %> </li>
+		<li><%= link_to("Care to lend a hand!?",@homeless_person.help3, :target => "_blank") %> </li>
+		<li><%= link_to("If you want to, it'd be really great if you helped #{@homeless_person.name}!",@homeless_person.help4, :target => "_blank")%> </li>
+	</ul>
 
 </div>
