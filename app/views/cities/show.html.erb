@@ -1,11 +1,44 @@
 
+
 <div class="container">
 
-  <%=@city.name%>
+	<h1 class="section__header--xl"> <%=@city.name%>
+	</h1>
 
-  <p>Bio</p>
+<div class="row content__section">
 
-  <%=@city.homeless_pop%>
+	<div class="col-md-6">
+			<div class="img_show">
+				<img src="<%=@city.img%>">
+			</div>
+	</div><!-- end of col-md-6 -->
+
+	
+
+
+	<div class="col-md-5">
+
+		<div class="row content">
+				  <p><span class="content__label">Background:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		</div>
+
+		<div class="row content">
+				  <p><span class="content__label">Population:</span>  <%=@city.homeless_pop%></p>
+				</div>
+
+				<div class="row content">
+				  <p><span class="content__label">Percentage of Homeless:</span>   9999</p>
+				 </div>
+
+				 <div class="row content">
+				   <p><span class="content__label">Key Initiaitives:</span> Lorem ipsum dolor sit amet</p>
+				 </div>
+
+			</div><!-- end of col-md-5-->
+
+	</section>
+
+</div><!-- end of row  -->
 
 
   <%= render 'form' %>
