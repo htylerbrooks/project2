@@ -28,7 +28,7 @@
 			</div>
 
 		</div><!-- end of col-md-6-->
-	
+
 	</div><!-- end of row-->
 
 
@@ -38,7 +38,6 @@
 
 	<%= @homeless_person.name %>
 	<%= @homeless_person.age %>
-	<%= image_tag @homeless_person.img %>
 	<ul>
 		<li><%= link_to( "Here is a way to Help!",@homeless_person.help, :target => "_blank") %> </li>
 		<li><%= link_to("Click here to help #{@homeless_person.name}!",@homeless_person.help2, :target => "_blank") %> </li>
