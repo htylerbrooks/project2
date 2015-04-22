@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'httparty'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
@@ -8,7 +8,7 @@ gem 'pg'
 
 gem 'font-awesome-rails'
 
-# Use for pry to debug stuff 
+# Use for pry to debug stuff
 gem 'pry'
 
 # Use SCSS for stylesheets
@@ -48,4 +48,3 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

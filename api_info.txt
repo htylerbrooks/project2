@@ -52,6 +52,7 @@ Key: MDE4OTI2ODUxMDE0Mjk2MzEyNTg2ZmQ1MQ001
     @articles = response["data"]
   end
 
+HTTParty.get('http://api.feedzilla.com/v1/categories/26/articles/search.json?q=Michael')
 
 Past project examples of API usage for reference:
 
