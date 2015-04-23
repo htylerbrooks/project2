@@ -19708,3 +19708,130 @@ Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-22 14:59:32 -0400
+
+
+Started GET "/" for ::1 at 2015-04-22 15:21:33 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.5ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered cities/index.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 445ms (Views: 422.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2015-04-22 15:21:33 -0400
+Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered cities/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 137ms (Views: 135.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cities/4" for ::1 at 2015-04-22 15:21:39 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mCity Load (0.4ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered cities/_form.html.erb (24.1ms)
+  Rendered cities/show.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 207ms (Views: 125.9ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/users" for ::1 at 2015-04-22 15:21:44 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j7BB88zB2QtliM/vOYHwRWl26M9OAAv2+mtCOQFLNQ/pyWgqyVELiTpIUqEP+XFadPUOMl81ZPYg8awoN/R2GQ==", "user"=>{"name"=>"Tyler", "age"=>"", "gender"=>"", "interest_one"=>"", "interest_two"=>""}, "city_id"=>"4", "commit"=>"Create User"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "gender", "interest_one", "interest_two", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Tyler"], ["gender", ""], ["interest_one", ""], ["interest_two", ""], ["created_at", "2015-04-22 19:21:44.851949"], ["updated_at", "2015-04-22 19:21:44.851949"]]
+  [1m[36m (12.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/cities/4/homeless_people
+Completed 302 Found in 17ms (ActiveRecord: 12.6ms)
+
+
+Started GET "/cities/4/homeless_people" for ::1 at 2015-04-22 15:21:44 -0400
+Processing by HomelessPeopleController#index as HTML
+  Parameters: {"city_id"=>"4"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mHomelessPerson Load (0.5ms)[0m  SELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1  [["city_id", 4]]
+  Rendered homeless_people/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 153ms (Views: 131.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2015-04-22 17:53:30 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.6ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered cities/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 371ms (Views: 345.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/cities/2" for ::1 at 2015-04-22 17:53:33 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCity Load (0.4ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered cities/_form.html.erb (29.5ms)
+  Rendered cities/show.html.erb within layouts/application (40.1ms)
+Completed 200 OK in 275ms (Views: 153.1ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/users" for ::1 at 2015-04-22 17:53:39 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DOY/yC1qvj9dDKBAmQZ/Pj8+4QTW86YDsBMZPCtPye5qnxYRKPpsvQLMPQ6vfv4hIr0H+cfGyQNqifctHfCK+A==", "user"=>{"name"=>"Tyler", "age"=>"", "gender"=>"", "interest_one"=>"", "interest_two"=>""}, "city_id"=>"2", "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (6.4ms)[0m  [1mINSERT INTO "users" ("name", "gender", "interest_one", "interest_two", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Tyler"], ["gender", ""], ["interest_one", ""], ["interest_two", ""], ["created_at", "2015-04-22 21:53:39.512590"], ["updated_at", "2015-04-22 21:53:39.512590"]]
+  [1m[35m (6.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/cities/2/homeless_people
+Completed 302 Found in 19ms (ActiveRecord: 12.8ms)
+
+
+Started GET "/cities/2/homeless_people" for ::1 at 2015-04-22 17:53:39 -0400
+Processing by HomelessPeopleController#index as HTML
+  Parameters: {"city_id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mCity Load (0.4ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mHomelessPerson Load (0.5ms)[0m  [1mSELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1[0m  [["city_id", 2]]
+  Rendered homeless_people/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 123ms (Views: 103.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2015-04-22 17:53:54 -0400
+Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.4ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered cities/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 147ms (Views: 145.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cities/1" for ::1 at 2015-04-22 17:54:00 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered cities/_form.html.erb (1.6ms)
+  Rendered cities/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 703ms (Views: 115.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for ::1 at 2015-04-22 17:54:07 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TOK3e4XHlMxtfemYm8cIwiOhCDmM8JRhKHxBcxNF5Lkqm56igFdGTjK9dNatv4ndPiLuxJ3F+2Hy5q9iJfqnrw==", "user"=>{"name"=>"hank", "age"=>"", "gender"=>"", "interest_one"=>"", "interest_two"=>""}, "city_id"=>"1", "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "gender", "interest_one", "interest_two", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "hank"], ["gender", ""], ["interest_one", ""], ["interest_two", ""], ["created_at", "2015-04-22 21:54:07.044264"], ["updated_at", "2015-04-22 21:54:07.044264"]]
+  [1m[35m (5.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/cities/1/homeless_people
+Completed 302 Found in 10ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/cities/1/homeless_people" for ::1 at 2015-04-22 17:54:07 -0400
+Processing by HomelessPeopleController#index as HTML
+  Parameters: {"city_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mCity Load (0.4ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHomelessPerson Load (0.4ms)[0m  [1mSELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1[0m  [["city_id", 1]]
+  Rendered homeless_people/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 108ms (Views: 101.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/cities/1/homeless_people" for ::1 at 2015-04-22 17:54:24 -0400
+Processing by HomelessPeopleController#index as HTML
+  Parameters: {"city_id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mCity Load (0.3ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mHomelessPerson Load (0.3ms)[0m  SELECT "homeless_people".* FROM "homeless_people" WHERE "homeless_people"."city_id" = $1  [["city_id", 1]]
+  Rendered homeless_people/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 125ms (Views: 121.2ms | ActiveRecord: 0.9ms)
