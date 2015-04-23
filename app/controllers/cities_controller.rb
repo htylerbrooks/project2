@@ -8,7 +8,6 @@ class CitiesController < ApplicationController
     @city = City.find(params[:id])
     @homeless = @city.homeless_people
     response = HTTParty.get("http://api.openweathermap.org/data/2.5/weather?q=#{@city.name}")
-    # @weather_description = response["weather"]
     @kelvin_temperature = response["main"]["temp"]
     @fahrenheit_temperature = ((@kelvin_temperature - 273.15)*1.8) + 32
     @temperature = @fahrenheit_temperature.round.to_s + "° F"
